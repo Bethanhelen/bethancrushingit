@@ -3,13 +3,17 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  
+}
+body{
+  background: #F1F1F1;
 }
 
 .header{
  background: #1A1A1A;
- padding: 12px 0 12px 0;
+ padding: 12px 15px 12px 15px;
  display: flex;
- justify-content: space-around;
+ justify-content: space-between;
  align-items: center;
 }
 .middle{
@@ -60,6 +64,9 @@
   justify-content: center;
   border-radius: 8px;
 }
+.dc{
+  cursor: pointer;
+}
 .dc h6{
   padding-right: 8px;
   font-size: 12px;
@@ -76,4 +83,112 @@
   border-radius: 6px;
   color: rgba(0, 0, 0, 0.4);
  
+}
+
+.sub-menu-wrap{
+  position: absolute;
+  top: 65px;
+  right: 15px;
+  width: 320px;
+  border-radius: 14px;
+  background: white;
+  max-width: 0px;
+  overflow: hidden;
+}
+
+.sub-menu-wrap.open-menu{
+  max-width: 400px;
+}
+.sub-menu{
+  padding: 0 8px 0px 8px;
+}
+.user-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F1F1F1;
+  margin: 5px 0 5px 0;
+  border-radius: 8px;
+  padding: 0 10px 0 10px;
+}
+.user-info-details{
+  display: flex;
+  align-items: center;
+}
+.user-info-details h6{
+  padding-left: 8px;
+  font-size: 13px;
+  color: #303030;
+  font-weight: 600;
+}
+.sub-menu-link{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  text-decoration: none;
+  /* margin: 4px 0; */
+}
+.sub-menu-link .shop{
+  margin: 5px;
+}
+.sub-menu-link .store{
+  font-size: 13px;
+  color: #303030;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+.sub-menu hr{
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #E1E1E1;
+}
+
+.sub-menu-products{
+  text-decoration: none;
+}
+
+.sub-menu .sub-menu-products .store{
+  font-size: 13px;
+  color: #303030;
+  font-weight: 400;
+  padding: 8px 0 8px 10px;
+  width: 100%;
+  cursor: pointer;
+}
+.sub-menu .sub-menu-products .store:hover{
+  background: #F1F1F1;
+  border-radius: 6px;
+}
+
+.sub-menu-profile{
+  text-decoration: none;
+  display: block;
+}
+.sub-menu-profile .store{
+  font-size: 13px;
+  color: #303030;
+  font-weight: 600;
+  padding: 8px 0 0px 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sub-menu-profile .small{
+  font-size: 12px;
+  color: #616161;
+  font-weight: 400;
+  padding: 0px 0 8px 10px;
+  width: 100%;
+  cursor: pointer;
+}
+.sub-menu .sub-menu-profile:hover, .sub-menu-link:hover{
+  background: #F1F1F1;
+  border-radius: 6px;
+}
+
+
+
+@media screen {
+  
 }
