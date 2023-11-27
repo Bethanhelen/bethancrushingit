@@ -85,6 +85,7 @@ body{
  
 }
 
+/*dc dropdown*/
 .sub-menu-wrap{
   position: absolute;
   top: 65px;
@@ -126,7 +127,6 @@ body{
   align-items: center;
   justify-content: left;
   text-decoration: none;
-  /* margin: 4px 0; */
 }
 .sub-menu-link .shop{
   margin: 5px;
@@ -187,7 +187,59 @@ body{
   border-radius: 6px;
 }
 
+/*notification drop-down*/
+.not-menu-wrap{
+  position: absolute;
+  top: 65px;
+  right: 15px;
+  width: 383px;
+  border-radius: 14px;
+  background: white;
+  max-width: 0px;
+  overflow: hidden;
+}
+.not-menu{
+  padding: 0 8px 0px 8px;
+  height: 118px;
+}
+.not-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+.not-info .check{
+  margin-left: 16px;
+}
+.not-text{
+  font-size: 14px;
+  color: #303030;
+  font-weight: 600;
+}
+.not-menu-products{
+  text-decoration: none;
+}
 
+.not-menu .not-menu-products .store{
+  font-size: 13px;
+  color: #616161;
+  font-weight: 500;
+  padding: 10px 0 10px 10px;
+  margin: 0 0 0 10px;
+  width: 351px;
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: #F1F1F1;
+}
+.not-menu-wrap.view-menu{
+  max-width: 400px;
+}
+.notification{
+  cursor: pointer;
+}
 
 @media screen {
   
