@@ -11,19 +11,20 @@ function switchMenu(){
 }
 
 // //body dropdown
-// const optionMenu = document.querySelector(".select-menu");
-// const selectBtn = optionMenu.querySelector(".bottom");
-// const options = optionMenu.querySelectorAll(".option");
-// const sBtn_text = optionMenu.querySelector(".bottom-top");
-
-// options.forEach(option => {
-//   option.addEventListener("click",()=>{
-//  let selectedOption = option.querySelector(".option-text").innerText;
-
-//  console.log(selectedOption)
-//   })
-  
-// })
+var acc = document.getElementsByClassName('bottom');
+var i;
+var len = acc.length;
+for(i = 0; i < len; i++) {
+	acc[i].addEventListener('click', function(){
+		this.classList.toggle('active');
+		var options = this.nextElementSibling;
+		if(options.style.maxHeight){
+			options.style.maxHeight = null;
+		}else{
+			options.style.maxHeight = panel.scrollHeight + 'px'
+		}
+	})
+}
 
 //body header hide
 const div = document.getElementById('main');

@@ -16,6 +16,11 @@ body{
  justify-content: space-between;
  align-items: center;
 }
+.left-logo{
+  width: 104px;
+  height: 30px;
+  background-image: url('https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg');
+}
 .middle{
   background: #303030;
   width: 430px; 
@@ -95,6 +100,7 @@ body{
   background: white;
   max-width: 0px;
   overflow: hidden;
+  z-index: 100;
 }
 
 .sub-menu-wrap.open-menu{
@@ -246,7 +252,7 @@ body{
 .container{
  margin: 32px auto;
  max-width:800px;
- height:178px ;
+ /* height:178px ; */
 }
 .top{
   max-width: 800px;
@@ -282,122 +288,171 @@ font-weight: 400;
   padding: 4px 0 0 8px;
   cursor: pointer;
 }
-.select-menu{
-  background: white;
-  max-width: 800px;
-  border-radius: 18px;
-}
-.bottom{
-  background: white;
-  height: 106px;
-  padding: 16px;
-  border-radius: 18px;
-}
-.bottom-top{
-  display: flex; 
-  justify-content: space-between;
-}
-.bottom-left h3{
-  font-size: 13px;
-  font-weight: 600;
-  color: #303030;
-}
-.bottom-left p{
-  font-size: 13px;
-  font-weight: 400;
-  color: #303030;
-  padding-top: 4px;
-}
-.bottom-down{
-  padding-top: 16px;
-  display: flex;
-}
-.bottom-down p{
-  font-size: 12px;
-  font-weight: 400;
-  color: #303030;
-  padding-right: 8px;
-}
-/* progress::-webkit-progress-bar {
-  background-color: yellow;
-  border-radius: 7px;
-}
-progress::-webkit-progress-value {
-  background-color: red;
-  border-radius: 7px;
-  box-shadow: 1px 1px 5px 3px rgba( 255, 0, 0, 0.8 );
-} */
 
-.container .options{
-  position: relative;
-  top: -12px;
-  padding: 16px;
+/* the main section body accordion */
+.wrapper{
+	border-radius: 18px;
+	
+}
+.wrapper .parent-tab,
+.wrapper .child-tab{
+ border-radius: 18px;
+}
+.wrapper .parent-tab label{
   background: white;
-  border-radius: 0 0 10px 10px;
-  margin-bottom: 20px;
-  z-index: -100;
-}
-.options .option{
-  list-style-type: none;
   display: flex;
-  background: #F3F3F3;
-  border-radius: 10px;
-  margin-bottom: 8px;
-  padding: 8px 0;
-  max-width: 784px;
-}
-.option svg{
-  cursor: pointer;
-  margin-right: 8px;
-}
-.option .option-text{
-  display: flex;
+  padding: 10px 20px;
   flex-direction: column;
-  padding-top: 4px;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+  z-index: 99;
 }
-.option-text h3{
-  color: #303030;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-.option-text p{
-  color: #616161;
-  font-size: 13px;
-  font-weight: 400;
-}
-.option-text a{
-  text-decoration: none;
-  font-size: 13px;
-  color: #005BD3;
-  margin-bottom: 16px;
-}
-.option-text button{
-  width: 127px;
-  padding: 6px 8px;
-  background: #404040;
-  border-radius: 6px;
-  color: #F6F3F6;
-  font-size: 12px;
-  font-weight: 600;
-  box-shadow: 0px 7px 1px -5px rgba(0,0,0,1); 
-
+.parent-tab .prog{
+	padding-top: 8px;
 }
 
-.option-text .btn{
+.wrapper .child-tab label{
+  background: white;
+  padding: 10px 20px;
   display: flex;
+  flex-direction: row;
   align-items: center;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+  z-index: 99;
 }
-.option-text .btn p{
-  padding-left: 16px;
+.wrapper label span{
+	color: #303030;
+	font-size: 18px;
+	font-weight: 500;
 }
-.body-text{
-  display: flex;
-  justify-content: space-between;
+
+.child-tab label span{
+	font-size: 17px;
+	padding-left: 8px;
+}
+
+.wrapper .parent-tab .content,
+.wrapper .child-tab .sub-content{
+	max-height: 0;
+	overflow: hidden;
+	transition: all .4s ease;
+}
+
+.parent-tab input:checked ~ .content,
+.child-tab input:checked ~ .sub-content{
+	max-height: 100vh;
+  padding-bottom: 10px
+}
+.child-tab input:checked ~ .content span{
+	font-weight: bolder;
+}
+
+.wrapper .parent-tab .content p{
+	font-size: 16px;
+	padding: 15px 20px;
+}
+
+.wrapper .child-tab .sub-content p{
+	font-size: 16px;
+	padding: 8px 0px 8px 42px;
+}
+.wrapper input{
+	display: none;
+}
+
+.parent-tab input:checked ~ label .icon svg:after,
+.child-tab input:checked ~ label .icon svg:after{
+	transform: rotate(-180deg);
+}
+
+.wrapper input:checked ~ label .icon svg{
+	transform: rotate(180deg);
+}
+.label-heading{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.sub-content{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  padding: 0px 12px;
+  background: white;
+
+}
+.sub-content .left{
+	display: flex;
+	flex-direction: column;
+  background: #F3F3F3;
+  height: 140px;
+  border-radius: 10px 0px 0px 10px;
+}
+.sub-content .right{
+  background: #F3F3F3;
+  height: 140px;
+  border-radius: 0px 10px 10px 0px;
+}
+.sub-content .left a{
+	padding-left: 42px;
+}
+.sub-content .left button{
+	width: 128px;
+	height: 28px;
+	margin-left: 42px;
+	margin-top: 6px;
+	background: #404040;
+	color: #F6F3F6;
+	border-radius: 6px;
+}
+.sub-content .left .btn{
+	display: flex;
+	align-items: center;
+}
+.sub-content .left .btn h5{
+	color: #323232;
+font-size: 12px;
+font-weight: semi-bold;
+padding-left: 16px;
+}
+
+
+@media screen and (max-width:390px){
+.sub-content .right{
+  display: none;
+}
+.sub-content .left{
+  border-radius: 10px;
+  height: 177px;
+}
+.dc h6{
+  display: none;
+}
+.middle{
+  width: 238px;
+  margin-left: 4px;
+}
+.left-logo{
+  background-image: url('https://crushingit.tech/hackathon-assets/shopify-icon.svg');
+  height: 32px;
   width: 100%;
 }
-
-
-@media screen {
-  
+.right .notification, .dc{
+  background: none;
+}
+.wrapper label span{
+  font-size: 14px;
+}
+.guide-content p{
+  font-size: 13px;
+}
+.not-menu-wrap.view-menu{
+  max-width: 358px;
+}
+.sub-menu-wrap.open-menu{
+  max-width: 320px;
+}
 }
